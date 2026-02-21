@@ -14,11 +14,22 @@ const revealElements = document.querySelectorAll('.reveal');
 const revealOnScroll = () => {
     const windowHeight = window.innerHeight;
     const revealPoint = 150;
+    const scrollY = window.scrollY;
 
     revealElements.forEach(el => {
-        const revealTop = el.getBoundingClientRect().top;
-        if (revealTop < windowHeight - revealPoint) {
-            el.classList.add('active');
+        // Special logic for hero sub-elements: reveal as soon as user scrolls a bit
+        if (el.closest('.hero')) {
+            if (scrollY > 50) {
+                el.classList.add('active');
+            } else {
+                el.classList.remove('active');
+            }
+        } else {
+            // General reveal logic for other sections
+            const revealTop = el.getBoundingClientRect().top;
+            if (revealTop < windowHeight - revealPoint) {
+                el.classList.add('active');
+            }
         }
     });
 };
