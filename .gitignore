@@ -1,0 +1,13 @@
+# Exclude source PDF files
+*.pdf
+files/*.pdf
+files/photos/*.pdf
+
+# Exclude extraction scripts
+extract_pdf.py
+extract_fitz.py
+__pycache__/
+
+# OS files
+.DS_Store
+Thumbs.db
