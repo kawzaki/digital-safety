@@ -150,6 +150,11 @@ nav.scrolled {
     font-weight: 900;
     margin-bottom: 0.5rem;
     line-height: 1.2;
+    transform: translateY(20vh);
+    /* Start lower */
+    transition: transform 0.1s ease-out;
+    /* Smooth parallax */
+    will-change: transform;
     /* H1 shows immediately, no reveal class needed on H1 itself usually, 
        but if it has it, we'll make sure it's active. */
 }
@@ -375,6 +380,8 @@ footer {
     .hero h1 {
         font-size: 2.2rem;
         margin-bottom: 1rem;
+        transform: translateY(10vh);
+        /* Slightly less dramatic on mobile */
     }
 
     .motto {

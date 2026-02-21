@@ -1,10 +1,22 @@
-// Header scroll effect
+// Header and Hero Parallax effect
 window.addEventListener('scroll', () => {
     const nav = document.getElementById('navbar');
-    if (window.scrollY > 50) {
+    const heroTitle = document.getElementById('hero-title');
+    const scrollY = window.scrollY;
+
+    // Navbar effect
+    if (scrollY > 50) {
         nav.classList.add('scrolled');
     } else {
         nav.classList.remove('scrolled');
+    }
+
+    // Hero Title Parallax
+    if (heroTitle && scrollY < window.innerHeight) {
+        const initialOffset = window.innerHeight * 0.2; // Match 20vh from CSS
+        const speed = 0.6;
+        const newY = initialOffset - (scrollY * speed);
+        heroTitle.style.transform = `translateY(${newY}px)`;
     }
 });
 
