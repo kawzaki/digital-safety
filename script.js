@@ -17,9 +17,11 @@ const revealOnScroll = () => {
     const scrollY = window.scrollY;
 
     revealElements.forEach(el => {
-        // Special logic for hero sub-elements: reveal as soon as user scrolls a bit
-        if (el.closest('.hero')) {
-            if (scrollY > 50) {
+        const isHero = el.closest('.hero');
+
+        if (isHero) {
+            // Hero sub-elements ONLY reveal after scrolling 100px
+            if (scrollY > 100) {
                 el.classList.add('active');
             } else {
                 el.classList.remove('active');

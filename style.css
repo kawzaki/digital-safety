@@ -357,9 +357,8 @@ footer {
     }
 
     .hero {
-        padding-top: var(--nav-height);
+        padding-top: calc(var(--nav-height) + 120px);
         justify-content: flex-start;
-        padding-top: 30vh;
     }
 
     .hero h1 {
