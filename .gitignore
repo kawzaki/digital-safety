@@ -1,13 +1,11 @@
-# Exclude source PDF files
-*.pdf
-files/*.pdf
-files/photos/*.pdf
-
-# Exclude extraction scripts
-extract_pdf.py
-extract_fitz.py
-__pycache__/
-
-# OS files
+# System files
 .DS_Store
 Thumbs.db
+
+# WAMP/Web server files
+*.log
+*.tmp
+
+# Brain/Agent artifacts - keeping them separate from the repo unless requested
+.gemini/
+brain/
