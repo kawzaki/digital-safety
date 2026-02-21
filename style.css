@@ -105,8 +105,22 @@ nav.scrolled {
 .hero h1 {
     font-size: clamp(2.5rem, 8vw, 5rem);
     font-weight: 900;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     line-height: 1.2;
+}
+
+.motto {
+    font-size: 1.5rem;
+    color: var(--primary-accent);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.mission {
+    font-size: 1.25rem;
+    color: var(--text-dim);
+    margin-bottom: 2.5rem;
+    font-weight: 400;
 }
 
 .hero p {
@@ -158,33 +172,57 @@ section {
     border-radius: 2px;
 }
 
-/* Pillars/Goals Grid */
-.pillars-grid {
+.skill-card h3,
+.risk-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Grids */
+.skills-grid,
+.risks-grid,
+.partners-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
-.pillar-card {
+.skill-card,
+.risk-card,
+.partner-card {
     padding: 2.5rem;
     text-align: center;
     transition: transform 0.3s, border-color 0.3s;
 }
 
-.pillar-card:hover {
+.skill-card:hover,
+.risk-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary-accent);
 }
 
-.pillar-icon {
+.card-icon {
     font-size: 3rem;
     margin-bottom: 1.5rem;
     color: var(--primary-accent);
 }
 
-.pillar-card h3 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+/* Partners */
+.partners-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    align-items: center;
+}
+
+.partner-card img {
+    max-width: 120px;
+    height: auto;
+    filter: brightness(0) invert(1) opacity(0.6);
+    transition: opacity 0.3s, filter 0.3s;
+}
+
+.partner-card:hover img {
+    opacity: 1;
+    filter: brightness(0) invert(1);
 }
 
 /* Activity Gallery */
